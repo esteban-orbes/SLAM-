@@ -39,7 +39,7 @@ sudo apt-get install python3.8-dev
 
 ## 3. Virtual environment setup.
 ```linux
-apt-get install python3-venv
+sudo apt-get install python3-venv
 python3.8 -m venv python38_ws
 ```
 #### Activation virtual environment.
@@ -60,7 +60,7 @@ echo $ROS_PACKAGE_PATH
 ## 5. Install pip.
 ```linux
 sudo apt update
-apt install python3-pip
+sudo apt install python3-pip
 ```
 ## 6. Install OPENNI.
 ```linux
@@ -95,8 +95,7 @@ git clone https://github.com/eric-wieser/ros_numpy.git
 cd ros_numpy/
 python setup.py install
 cd
-cd catkin_ws
-cd src
+cd catkin_ws/src
 sudo git clone https://github.com/Slamtec/rplidar_ros.git
 catkin_make
 sudo apt-get install ros-noetic-openni-camera ros-noetic-openni-launch
