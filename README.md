@@ -167,7 +167,9 @@ typedef map<KeyFrame*,g2o::Sim3,std::less<KeyFrame*>,
         Eigen::aligned_allocator<std::pair<KeyFrame *const, g2o::Sim3> > > KeyFrameAndPose;
 
 
+### For other errors consult the following guide:
 
+https://icode.best/i/32004845407134
 
 
 ## 11. Creating a catkin Package rdslam for Rec-HV execution.
