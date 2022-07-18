@@ -24,7 +24,7 @@ sudo apt -y upgrade
 #### If the python version is different than 3.8 do this, otherwise skip this step
 ```linux
 python3 -V
-apt install ´python3.8 -y
+sudo apt install python3.8 -y
 ```
 #### Continue here…
 ```linux
