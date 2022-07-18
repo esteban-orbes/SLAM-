@@ -171,9 +171,62 @@ typedef map<KeyFrame*,g2o::Sim3,std::less<KeyFrame*>,
 
 https://icode.best/i/32004845407134
 
+## 10. Intel Realsense installation and dependencies.
+### Preparations
+```linux
+export REALSENSE_SOURCE_DIR=$HOME/catkin_ws/src/librealsense/
+sudo apt-get install guvcview git libssl-dev libusb-1.0-0-dev pkg-config libgtk-3-dev
+sudo apt-get install libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev
+git clone https://github.com/IntelRealSense/librealsense.git $REALSENSE_SOURCE_DIR
+mkdir $REALSENSE_SOURCE_DIR/build
+cd $REALSENSE_SOURCE_DIR/build
+```
+### Build
+```linux
+export REALSENSE_INSTALL_PREFIX=/opt/realsense
+sudo mkdir -p $REALSENSE_INSTALL_PREFIX; 
+sudo chown $USER:$USER -R $REALSENSE_INSTALL_PREFIX # not relay needed -> you could run _make_ followed by _sudo make install_
+cmake ../ -DFORCE_RSUSB_BACKEND=true -DBUILD_PYTHON_BINDINGS=false -DCMAKE_BUILD_TYPE=release -DBUILD_EXAMPLES=true -DBUILD_GRAPHICAL_EXAMPLES=true -DCMAKE_INSTALL_PREFIX=$REALSENSE_INSTALL_PREFIX
+sudo make install
+```
+### Extend the ld search path
+```linux
+sudo sh -c "echo $REALSENSE_INSTALL_PREFIX/lib > /etc/ld.so.conf.d/realsense.conf"
+sudo ldconfig
+```
+
+### Udev rules
+```linux
+cd
+cd ~/catkin_ws/src/librealsense/
+sudo cp config/99-realsense-libusb.rules /etc/udev/rules.d/99-realsense-libusb.rules && sudo udevadm control --reload-rules && udevadm trigger
+```
+### Make cmake config avaliable
+```linux
+echo "export realsense2_DIR=/opt/realsense/lib/cmake/realsense2" >> ~/.bashrc
+```
+### Reboot
+```linux
+cd
+sudo reboot
+```
+### Test
+```linux
+### connect the camera before running ###
+realsense-viewer
+```
+### ROS
+```linux
+export REALSENSE_ROS_WS=$HOME/catkin_ws/src/ros/ws00
+sudo apt install ros-noetic-ddynamic-reconfigure
+git clone https://github.com/IntelRealSense/realsense-ros.git $REALSENSE_ROS_WS/src/realsense-ros
+cd $REALSENSE_ROS_WS
+sudo catkin_make
+```
 
 ## 11. Creating a catkin Package rdslam for Rec-HV execution.
 ```linux
+cd
 cd ~/catkin_ws/src
 catkin_create_pkg rdslam std_msgs rospy roscpp
 cd
@@ -190,8 +243,8 @@ catkin_make
 #### now to run the code connect the RPLIDARA1 and Kinect sensors with adapter to USB type A.
 #### and execute the following lines on a terminal.
 ```linux
-cd ~/python36_ws
-source py36env/bin/activate
+cd ~/python38_ws
+source python38_ws/bin/activate
 cd
 cd catkin_ws/src/rdslam/src
 sudo chmod 666 /dev/ttyUSB0.
