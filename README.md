@@ -97,6 +97,8 @@ python setup.py install
 cd
 cd catkin_ws/src
 sudo git clone https://github.com/Slamtec/rplidar_ros.git
+cd
+cd catkin_ws
 catkin_make
 sudo apt-get install ros-noetic-openni-camera ros-noetic-openni-launch
 ```
