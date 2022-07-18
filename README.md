@@ -116,7 +116,7 @@ sudo apt-get install libeigen3-dev
 sudo apt-get install -y doxygen libgl1-mesa-dev libglew-dev cmake libboost-all-dev
 sudo apt-get update -y
 sudo apt-get install -y libsdl-pango-dev
-sudo apt-get install ros-___rosdependencia_____-libg2o
+sudo apt-get install ros-noetic-libg2o
 sudo apt-get install autoconf
 sudo apt-get install wayland-protocols
 sudo apt install libopenexr22
@@ -175,6 +175,7 @@ https://icode.best/i/32004845407134
 ## 10. Intel Realsense installation and dependencies.
 ### Preparations
 ```linux
+cd
 export REALSENSE_SOURCE_DIR=$HOME/catkin_ws/src/librealsense/
 sudo apt-get install guvcview git libssl-dev libusb-1.0-0-dev pkg-config libgtk-3-dev
 sudo apt-get install libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev
