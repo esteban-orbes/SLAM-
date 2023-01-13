@@ -99,8 +99,10 @@ cd
 sudo apt-get install ros-melodic-openni-camera ros-melodic-openni-launch
 ```
 ## 9. Package installation.
-#### save what is at this address in the "src" folder of the project.
+#### Save what is at this address in the "src" folder of the project.
 https://github.com/tjuan45/tf2
+
+#### Then run in the terminal the following
 
 ```linux
 cd
