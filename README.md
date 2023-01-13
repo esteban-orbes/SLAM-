@@ -98,9 +98,23 @@ python setup.py install
 cd
 sudo apt-get install ros-melodic-openni-camera ros-melodic-openni-launch
 ```
+## 9. Package installation.
+#### save what is at this address in the "src" folder of the project.
+https://github.com/tjuan45/tf2
 
+```linux
+cd
+cd ~/catkin_ws
+catkin_make
+cd
+cd ~/catkin_ws/src
+git clone https://github.com/tjuan45/pointcloud_to_laserscan.git
+cd
+cd ~/catkin_ws
+catkin_make
+```
 
-## 11. Creating a catkin Package rdslam for Rec-HV execution.
+## 10. Creating a catkin Package rdslam2 for Rec-HV execution.
 ```linux
 cd
 cd ~/catkin_ws/src
@@ -108,15 +122,16 @@ catkin_create_pkg rdslam2 std_msgs rospy roscpp
 cd
 ```
 #### save and replace what is at this address in the project folder.
-https://github.com/MAB1144-Python/SLAM-REC-HV-version-1.0-test/tree/main/rdslam
-## 12. Build a catkin workspace and sourcing the setup file in ROS.
+https://github.com/tjuan45/rdslam2
+
+## 11. Build a catkin workspace and sourcing the setup file in ROS.
 ```linux
 cd ~/catkin_ws
 catkin_make
 . ~/catkin_ws/devel/setup.bash
 ```
 # Execution Rec_HV
-#### now to run the code connect the RPLIDARA1 and Kinect sensors with adapter to USB type A.
+#### now to run the code connect the Kinect sensors with adapter to USB type A.
 #### and execute the following lines on a terminal.
 ```linux
 cd ~/python38_ws
