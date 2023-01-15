@@ -39,7 +39,7 @@ sudo apt-get install python3.8-dev
 
 ## 3. Virtual environment setup.
 ```linux
-sudo apt-get install python3-venv
+sudo apt-get install python3.8-venv
 python3.8 -m venv python38_ws
 ```
 #### Activation virtual environment.
