@@ -44,7 +44,6 @@ python3.8 -m venv python38_ws
 ```
 #### Activation virtual environment.
 ```linux
-cd python38_ws
 source python38_ws/bin/activate
 ```
 
@@ -136,7 +135,6 @@ catkin_make
 #### now to run the code connect the Kinect sensors with adapter to USB type A.
 #### and execute the following lines on a terminal.
 ```linux
-cd ~/python38_ws
 source python38_ws/bin/activate
 cd
 ```
