@@ -76,11 +76,14 @@ python
 import cv2 as cv
 print(cv.__version__)
 ```
+#### If it gives an error, execute the following again and try again ####
+```linux
+pip3 install opencv-python
+```
 ## 8. Dependencies.
 ```linux
 cd
 pip install rospkg
-pip3 install opencv-python
 pip3 install matplotlib
 pip3 install openpyxl
 pip3 install pandas
