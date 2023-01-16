@@ -69,7 +69,9 @@ sudo apt-get update
 sudo pip3 install scikit-build
 sudo apt-get install python3-opencv
 sudo pip3 install opencv-python
+```
 #### To test that the opencv was correctly installed do ####
+```linux
 python
 import cv2 as cv
 print(cv.__version__)
