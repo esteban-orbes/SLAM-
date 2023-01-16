@@ -47,8 +47,9 @@ cd ~/catkin_ws/
 catkin_make
 source devel/setup.bash
 echo $ROS_PACKAGE_PATH
-#### If everything is ok it should show this path “/home/youruser/catkin_ws/src:/opt/ros/melodic/share” ####
 ```
+#### If everything is ok it should show this path “/home/youruser/catkin_ws/src:/opt/ros/melodic/share” ####
+
 ## 5. Install pip.
 ```linux
 cd
