@@ -41,6 +41,7 @@ source py36env/bin/activate
 
 ## 4. Setup Workspace.
 ```
+cd
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/
 catkin_make
