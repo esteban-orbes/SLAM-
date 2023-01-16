@@ -28,6 +28,7 @@ sudo apt-get install python3.6-dev
 ```linux
 mkdir -p ~/python36_ws/src
 cd ~/python36_ws
+sudo apt install virtualenv
 pip3 install --user virtualenv
 virtualenv --python=/usr/bin/python3.6 py36env
 cd
