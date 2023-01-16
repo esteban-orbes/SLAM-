@@ -16,35 +16,26 @@ sudo rosdep init
 rosdep update
 ```
 
-## 2. installation of python 3.8.
+## 2. installation of python 3.6.
 ```linux
 sudo apt update
 sudo apt -y upgrade
-```
-#### If the python version is different than 3.8 do this, otherwise skip this step
-```linux
-python3 -V
-sudo apt install python3.8 -y
-```
-#### Continue here…
-```linux
-sudo apt install -y python3-pip
-sudo apt install build-essential libssl-dev libffi-dev python3-dev
-sudo apt-get install python3-pip python3-yaml
+sudo apt-get install python3-pip python3-yaml python3-dev
 sudo pip3 install rospkg catkin_pkg rosdep rosinstall_generator rosinstall wstool vcstools catkin_tools
-sudo apt-get install python3.8-dev
+sudo apt-get install python3.6-dev
 ```
-
-
-
 ## 3. Virtual environment setup.
 ```linux
-sudo apt-get install python3.8-venv
-python3.8 -m venv python38_ws
+mkdir -p ~/python36_ws/src
+cd ~/python36_ws
+pip3 install --user virtualenv
+virtualenv --python=/usr/bin/python3.6 py36env
+cd
 ```
 #### Activation virtual environment.
 ```linux
-source python38_ws/bin/activate
+cd ~/python36_ws
+source py36env/bin/activate
 ```
 
 ## 4. Setup Workspace.
@@ -135,8 +126,9 @@ catkin_make
 #### now to run the code connect the Kinect sensors with adapter to USB type A.
 #### and execute the following lines on a terminal.
 ```linux
-source python38_ws/bin/activate
 cd
+cd ~/python36_ws
+source py36env/bin/activate
 ```
 #### Launch Rec-HV.
 ```linux
