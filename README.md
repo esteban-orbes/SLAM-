@@ -89,6 +89,7 @@ pip3 install openpyxl
 pip3 install pandas
 pip3 install seaborn
 pip3 install sklearn
+pip3 install scikit-learn
 pip3 install open3d-python
 git clone https://github.com/eric-wieser/ros_numpy.git
 cd ros_numpy/
